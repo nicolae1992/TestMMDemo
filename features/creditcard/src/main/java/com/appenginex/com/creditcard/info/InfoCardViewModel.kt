@@ -31,7 +31,6 @@ class InfoCardViewModel @Inject constructor() : ViewModel() {
     fun readLogs(context: Context, filter: String? = null) {
         viewModelScope.launch(Dispatchers.IO) {
             val logs = readLogsFromFile(context)
-            //_transactions.value = emptyList() // Clear existing transactions if needed
             _transactions.value = logs.filter { filter == it.cardNumber }
         }
     }

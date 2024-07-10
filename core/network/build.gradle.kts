@@ -9,7 +9,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.library)
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {

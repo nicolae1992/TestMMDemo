@@ -138,11 +138,6 @@ fun InfoCardScreen(
             transactions.forEach { transaction ->
                 TransactionLogItem(transaction = transaction)
             }
-            /* LazyColumn(modifier = Modifier.fillMaxSize()) {
-                 items(transactions) { transaction ->
-                     TransactionLogItem(transaction)
-                 }
-             }*/
         }
     }
 

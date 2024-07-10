@@ -20,7 +20,6 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
     }
 
     private fun loadCreditCards() {
-        // Simulate loading cards from a data source
         viewModelScope.launch {
             _cards.value = CreditCards.cards
         }
