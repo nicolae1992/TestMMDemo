@@ -1,6 +1,8 @@
 package com.appenginex.com.data.extension
 
 import com.appenginex.com.common.Constants.EMPTY_TEXT
+import com.appenginex.com.database.entities.CreditCardEntity
+import com.appenginex.com.model.CreditCard
 import com.appenginex.com.model.DeleteCreditCard
 import com.appenginex.com.model.CreditCardInfo
 import com.appenginex.com.model.Transaction
@@ -25,3 +27,23 @@ fun NetworkDeleteCard.toDeleteCreditCard(defaultUrl: String = EMPTY_TEXT): Delet
 fun NetworkTransaction.toTransaction(): Transaction {
     return Transaction()
 }
+
+
+fun CreditCardEntity.toCreditCard(): CreditCard {
+    return CreditCard(
+        cardNumber = this.cardNumber,
+        cardHolderName = this.cardHolderName,
+        cvv = this.cvv,
+        expiryDate = this.expiryDate
+    )
+}
+
+fun CreditCard.toCreditCardEntity(): CreditCardEntity {
+    return CreditCardEntity(
+        cardNumber = this.cardNumber,
+        cardHolderName = this.cardHolderName,
+        cvv = this.cvv,
+        expiryDate = this.expiryDate
+    )
+}
+

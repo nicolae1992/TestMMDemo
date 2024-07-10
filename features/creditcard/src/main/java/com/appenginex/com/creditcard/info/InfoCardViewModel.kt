@@ -7,6 +7,7 @@ import com.appenginex.com.common.getCurrentTime
 import com.appenginex.com.creditcard.utils.readLogsFromFile
 import com.appenginex.com.creditcard.utils.writeLogsToFile
 import com.appenginex.com.data.CreditCards
+import com.appenginex.com.data.repository.CardRepository
 import com.appenginex.com.model.CreditCard
 import com.appenginex.com.model.Transaction
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,7 +18,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class InfoCardViewModel @Inject constructor() : ViewModel() {
+class InfoCardViewModel @Inject constructor(
+    private val repository: CardRepository
+) : ViewModel() {
     private val _cards = MutableStateFlow<List<CreditCard>>(emptyList())
     val cards: StateFlow<List<CreditCard>> = _cards
 
@@ -38,7 +41,11 @@ class InfoCardViewModel @Inject constructor() : ViewModel() {
 
     private fun loadCreditCards() {
         viewModelScope.launch {
-            _cards.value = CreditCards.cards
+            repository.getCreditCards().collect {
+                val tempCards = _cards.value.toMutableList()
+                tempCards.addAll(it)
+                _cards.value = tempCards
+            }
         }
     }
 

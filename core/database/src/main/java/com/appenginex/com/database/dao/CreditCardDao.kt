@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CreditCardDao {
     @Query("SELECT * FROM creditCards")
-    fun getCards(): Flow<CreditCardEntity>
+    fun getCards(): Flow<List<CreditCardEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(creditCardEntity: CreditCardEntity)

@@ -9,7 +9,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.appenginex.com.common.Constants.EMPTY_TEXT
 import com.appenginex.com.common.navigation.NavigationRoutes
+import com.appenginex.com.common.navigation.NavigationRoutes.CreateCreditCard.CREATE_CREDIT_CARD
 import com.appenginex.com.common.navigation.Screen
+import com.appenginex.com.creditcard.create.CreateCreditCardScreen
 import com.appenginex.com.creditcard.info.InfoCardScreen
 import com.appenginex.com.dash.DashboardScreen
 import com.appenginex.com.model.CreditCard
@@ -41,6 +43,9 @@ fun AppNavGraph(navController: NavHostController) {
                 cvv = backStackEntry.arguments?.getString(NavigationRoutes.InfoCreditCard.argCardNumber)?: EMPTY_TEXT,
             )
             InfoCardScreen(creditCard = creditCard)
+        }
+        composable(route = CREATE_CREDIT_CARD){
+            CreateCreditCardScreen()
         }
         composable(Screen.Transactions.route) {
             Text("Transaction")

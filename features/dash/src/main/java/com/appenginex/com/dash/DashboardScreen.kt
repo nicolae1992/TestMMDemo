@@ -56,7 +56,7 @@ fun DashboardScreen(
 
         FloatingActionButton(
             onClick = {
-                // Handle the FAB click action here
+                navHostController.navigate(NavigationRoutes.CreateCreditCard.createCreditCard())
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
