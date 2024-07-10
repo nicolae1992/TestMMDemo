@@ -10,10 +10,9 @@ import androidx.navigation.navArgument
 import com.appenginex.com.common.Constants.EMPTY_TEXT
 import com.appenginex.com.common.navigation.NavigationRoutes
 import com.appenginex.com.common.navigation.Screen
-import com.appenginex.com.creditcard.InfoCardScreen
+import com.appenginex.com.creditcard.info.InfoCardScreen
 import com.appenginex.com.dash.DashboardScreen
 import com.appenginex.com.model.CreditCard
-import com.appenginex.com.model.CreditCardInfo
 
 //import com.appenginex.com.transaction.TransactionsScreen
 

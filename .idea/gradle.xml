@@ -19,7 +19,6 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/creditcard" />
             <option value="$PROJECT_DIR$/features/dash" />
-            <option value="$PROJECT_DIR$/features/logs" />
             <option value="$PROJECT_DIR$/features/transaction" />
           </set>
         </option>

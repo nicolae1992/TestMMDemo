@@ -23,7 +23,5 @@ fun NetworkDeleteCard.toDeleteCreditCard(defaultUrl: String = EMPTY_TEXT): Delet
 }
 
 fun NetworkTransaction.toTransaction(): Transaction {
-    return Transaction(
-        success = success
-    )
+    return Transaction()
 }
