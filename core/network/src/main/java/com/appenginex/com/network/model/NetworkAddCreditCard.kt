@@ -6,12 +6,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class NetworkAddCreditCard(
-    @SerialName("code")
-    val code: Int,
-    @SerialName("lang")
-    val lang: String,
+    @SerialName("id")
+    val id: Long,
     @SerialName("status")
     val status: Boolean,
-    @SerialName("url")
-    val url: String?
+    @SerialName("type")
+    val type: String?,
+    @SerialName("cardNumber")
+    val cardNumber: String,
 )

@@ -11,13 +11,109 @@
     {
       "uuid": "6a5934b2-4573-4904-933c-bb80b1637f18",
       "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "user",
+      "documentation": "Adaugarea unui card nou",
+      "method": "post",
+      "endpoint": "api/add-card",
       "responses": [
         {
           "uuid": "5833128d-e5c4-4e88-acce-5bb1e183cdd5",
-          "body": "{}",
+          "body": "{\n  \"status\": true,\n  \"id\": 123,\n  \"type\": \"VISA\",\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "724f6eb2-722c-4ea5-865b-4b7608ab255f",
+          "body": "{\n  \"status\": true,\n  \"id\": 124,\n  \"type\": \"VISA\",\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "f654aee3-db35-40a5-835c-5c9152edaedc",
+          "body": "{\n  \"status\": true,\n  \"id\": 125,\n  \"type\": \"VISA\",\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "c0afa56f-df16-430b-83be-6bd7b8d797fd",
+      "type": "http",
+      "documentation": "Stergerea unui card",
+      "method": "post",
+      "endpoint": "api/delete-card",
+      "responses": [
+        {
+          "uuid": "22da695e-118b-4c1c-a0db-75aacae53eef",
+          "body": "{\n  \"status\": true,\n  \"id\": 123,\n  \"type\": \"VISA\",\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "898c0be7-ea24-460a-b6e2-39f5a5eb24b0",
+      "type": "http",
+      "documentation": "Stergerea unui card",
+      "method": "post",
+      "endpoint": "api/transaction",
+      "responses": [
+        {
+          "uuid": "e96819d3-cec3-4ec6-897e-164be97d7d97",
+          "body": "{\n  \"status\": true,\n  \"id\": 123,\n  \"type\": \"VISA\",\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -42,6 +138,14 @@
     {
       "type": "route",
       "uuid": "6a5934b2-4573-4904-933c-bb80b1637f18"
+    },
+    {
+      "type": "route",
+      "uuid": "c0afa56f-df16-430b-83be-6bd7b8d797fd"
+    },
+    {
+      "type": "route",
+      "uuid": "898c0be7-ea24-460a-b6e2-39f5a5eb24b0"
     }
   ],
   "proxyMode": false,

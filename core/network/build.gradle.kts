@@ -1,3 +1,10 @@
+import java.util.Properties
+
+val localProperties = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
+}
+val baseUrl: String = localProperties.getProperty("baseUrl") ?: ""
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -13,9 +20,7 @@ android {
     }
     defaultConfig {
         minSdk = 34
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "baseUrl", "\"$baseUrl\"")
     }
 
     buildTypes {
@@ -34,14 +39,13 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
 }
 
 dependencies {
     api(project(":core:model"))
+    api(project(":core:common"))
 
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
     implementation(libs.retrofit)
     implementation(libs.okhttp)
     implementation(libs.retrofit.kotlinx.serialization.json)

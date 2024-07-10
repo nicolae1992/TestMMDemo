@@ -6,12 +6,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class NetworkDeleteCard(
-    @SerialName("code")
-    val code: Int,
-    @SerialName("lang")
-    val lang: String,
-    @SerialName("response")
-    val response: String,
+    @SerialName("id")
+    val id: Long,
+    @SerialName("type")
+    val type: String,
     @SerialName("status")
     val status: Boolean
 )

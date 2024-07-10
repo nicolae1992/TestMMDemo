@@ -1,6 +1,7 @@
 package com.appenginex.com.network.di
 
 import android.content.Context
+import com.appenginex.com.network.ApiService
 import com.appenginex.com.network.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
@@ -44,7 +45,7 @@ internal object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(json: Json): Retrofit = Retrofit.Builder()
-        .baseUrl("http://localhost:3001")
+        .baseUrl(BuildConfig.baseUrl)
         .addConverterFactory(
             json.asConverterFactory("application/json".toMediaType()),
         )
@@ -61,5 +62,7 @@ internal object NetworkModule {
         )
         .build()
 
-
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 }

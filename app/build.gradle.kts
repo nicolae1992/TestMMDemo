@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.hilt.library)
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
@@ -44,6 +44,9 @@ android {
     buildFeatures {
         compose = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -53,17 +56,25 @@ android {
 
 dependencies {
 
+    implementation(project(":features:dash"))
+    implementation(project(":features:creditcard"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.material3)
+    implementation(libs.navigation.compose)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.lifecycleViewModelCompose)
+    implementation(libs.lifecycleRuntimeCompose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

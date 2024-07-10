@@ -11,14 +11,16 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/common" />
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/designsystem" />
             <option value="$PROJECT_DIR$/core/model" />
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/DashBoard" />
-            <option value="$PROJECT_DIR$/features/Logs" />
-            <option value="$PROJECT_DIR$/features/Transaction" />
+            <option value="$PROJECT_DIR$/features/creditcard" />
+            <option value="$PROJECT_DIR$/features/dash" />
+            <option value="$PROJECT_DIR$/features/logs" />
+            <option value="$PROJECT_DIR$/features/transaction" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
